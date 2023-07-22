@@ -4,6 +4,10 @@
  * @val: argumen t.
  * Return: the length of the string.
  */
+int printf_HEX_aux(unsigned int num)
+{
+	return (num);
+}
 
 int printf_exclusive_string(va_list val)
 {
