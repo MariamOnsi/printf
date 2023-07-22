@@ -85,26 +85,26 @@ int print_integer(va_list kinds, char buffer[],
 int print_binary_num(va_list kinds, char buffer[],
 
         int flag, int width, int precision, int size);
-int print_unsigned(va_list types, char buffer[],
+int print_unsigned_num(va_list kinds, char buffer[],
 
-        int flags, int width, int precision, int size);
+        int flag, int width, int precision, int size);
 
-int print_octal(va_list types, char buffer[],
+int print_unsigned_octal_num(va_list kinds, char buffer[],
 
-        int flags, int width, int precision, int size);
+        int flag, int width, int precision, int size);
 
-int print_hexadecimal(va_list types, char buffer[],
+int print_hexadecimal_num(va_list kinds, char buffer[],
 
-        int flags, int width, int precision, int size);
+        int flag, int width, int precision, int size);
 
-int print_hexa_upper(va_list types, char buffer[],
+int print_hexa_upper_num(va_list kinds, char buffer[],
 
-        int flags, int width, int precision, int size);
+        int flag, int width, int precision, int size);
 
 
-int print_hexa(va_list types, char map_to[],
+int print_hexa_num(va_list kinds, char map_to[],
 
-char buffer[], int flags, char flag_ch, int width, int precision, int size);
+char buffer[], int flag, char flag_ch, int width, int precision, int size);
 
 
 /* Function to print non printable characters */
