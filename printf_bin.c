@@ -7,28 +7,29 @@
  */
 int printf_bin(va_list val)
 {
+	int j, y;
+	int x = 1;
 	int flag = 0;
-	int cont = 0;
-	int i, a = 1, b;
+	int add = 0;
 	unsigned int num = va_arg(val, unsigned int);
-	unsigned int p;
+	unsigned int num1;
 
-	for (i = 0; i < 32; i++)
+	for (j = 0; j < 32; j++)
 	{
-		p = ((a << (31 - i)) & num);
-		if (p >> (31 - i))
+		num1 = ((x << (31 - j)) & num);
+		if (num1 >> (31 - j))
 			flag = 1;
 		if (flag)
 		{
-			b = p >> (31 - i);
-			_putchar(b + 48);
-			cont++;
+			y = num1 >> (31 - j);
+			_putchar(y + 48);
+			add++;
 		}
 	}
-	if (cont == 0)
+	if (add == 0)
 	{
-		cont++;
+		add++;
 		_putchar('0');
 	}
-	return (cont);
+	return (add);
 }
