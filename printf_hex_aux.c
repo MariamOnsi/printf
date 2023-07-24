@@ -7,30 +7,30 @@
  */
 int printf_hex_aux(unsigned long int num)
 {
-	long int i;
-	long int *array;
-	long int counter = 0;
+	long int *arr;
+	long int j;
+	long int count = 0;
 	unsigned long int temp = num;
 
 	while (num / 16 != 0)
 	{
 		num /= 16;
-		counter++;
+		count++;
 	}
-	counter++;
-	array = malloc(counter * sizeof(long int));
+	count++;
+	arr = malloc(count * sizeof(long int));
 
-	for (i = 0; i < counter; i++)
+	for (j = 0; j < count; j++)
 	{
-		array[i] = temp % 16;
+		arr[j] = temp % 16;
 		temp /= 16;
 	}
-	for (i = counter - 1; i >= 0; i--)
+	for (j = count - 1; j >= 0; j--)
 	{
-		if (array[i] > 9)
-			array[i] = array[i] + 39;
-		_putchar(array[i] + '0');
+		if (arr[j] > 9)
+			arr[j] = arr[j] + 39;
+		_putchar(arr[j] + '0');
 	}
-	free(array);
-	return (counter);
+	free(arr);
+	return (count);
 }
