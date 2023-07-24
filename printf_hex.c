@@ -7,31 +7,31 @@
  */
 int printf_hex(va_list val)
 {
-	int i;
-	int *array;
-	int counter = 0;
-	unsigned int num = va_arg(val, unsigned int);
-	unsigned int temp = num;
+	int k;
+	int *arr;
+	int count = 0;
+	unsigned int numb = va_arg(val, unsigned int);
+	unsigned int temp = numb;
 
-	while (num / 16 != 0)
+	while (numb / 16 != 0)
 	{
-		num /= 16;
-		counter++;
+		numb /= 16;
+		count++;
 	}
-	counter++;
-	array = malloc(counter * sizeof(int));
+	count++;
+	arr = malloc(count * sizeof(int));
 
-	for (i = 0; i < counter; i++)
+	for (k = 0; k < count; k++)
 	{
-		array[i] = temp % 16;
+		arr[k] = temp % 16;
 		temp /= 16;
 	}
-	for (i = counter - 1; i >= 0; i--)
+	for (k = count - 1; k >= 0; k--)
 	{
-		if (array[i] > 9)
-			array[i] = array[i] + 39;
-		_putchar(array[i] + '0');
+		if (arr[k] > 9)
+			arr[k] = arr[k] + 39;
+		_putchar(arr[k] + '0');
 	}
-	free(array);
-	return (counter);
+	free(arr);
+	return (count);
 }

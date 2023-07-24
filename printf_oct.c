@@ -7,29 +7,28 @@
  */
 int printf_oct(va_list val)
 {
-	int i;
-	int *array;
-	int counter = 0;
-	unsigned int num = va_arg(val, unsigned int);
-	unsigned int temp = num;
+	int j, *arr;
+	int count = 0;
+	unsigned int numb = va_arg(val, unsigned int);
+	unsigned int temp = numb;
 
-	while (num / 8 != 0)
+	while (numb / 8 != 0)
 	{
-		num /= 8;
-		counter++;
+		numb /= 8;
+		count++;
 	}
-	counter++;
-	array = malloc(counter * sizeof(int));
+	count++;
+	arr = malloc(count * sizeof(int));
 
-	for (i = 0; i < counter; i++)
+	for (j = 0; j < count; j++)
 	{
-		array[i] = temp % 8;
+		arr[j] = temp % 8;
 		temp /= 8;
 	}
-	for (i = counter - 1; i >= 0; i--)
+	for (j = count - 1; j >= 0; j--)
 	{
-		_putchar(array[i] + '0');
+		_putchar(arr[j] + '0');
 	}
-	free(array);
-	return (counter);
+	free(arr);
+	return (count);
 }
