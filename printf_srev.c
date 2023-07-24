@@ -9,15 +9,15 @@
 int printf_srev(va_list args)
 {
 
-	char *s = va_arg(args, char*);
-	int i;
-	int j = 0;
+	char *str = va_arg(args, char*);
+	int x;
+	int y = 0;
 
-	if (s == NULL)
-		s = "(null)";
-	while (s[j] != '\0')
-		j++;
-	for (i = j - 1; i >= 0; i--)
-		_putchar(s[i]);
-	return (j);
+	if (str == NULL)
+		str = "(null)";
+	while (str[y] != '\0')
+		y++;
+	for (x = y - 1; x >= 0; x--)
+		_putchar(str[x]);
+	return (y);
 }
